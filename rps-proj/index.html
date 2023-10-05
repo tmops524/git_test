@@ -11,12 +11,42 @@
 
 <body>
     <script>
-        let choice = ["Rock", "Paper", "Scissors"]
-        let randomChoice = choice[Math.floor(Math.random() * choice.length)];
-        console.log(randomChoice);
-        function getComputerChoice() {
-            return console.log(randomChoice);
+
+
+        function computerPlay() {
+            let choice = ["rock", "paper", "scissors"]
+            return randomChoice = choice[Math.floor(Math.random() * choice.length)];
         }
+
+        function playerSelection() {
+            return prompt("Enter Rock, Paper or Scissors").toLowerCase();
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            console.log(`Computer choose ${computerSelection}`);
+            if (computerSelection === "rock" && playerSelection === "scissors") {
+                return "Computer Wins";
+            } else if (computerSelection === "paper" && playerSelection === "rock") {
+                return "Computer Wins";
+            } else if (computerSelection === "scissors" && playerSelection === "paper") {
+                return "Computer Wins";
+            } else if (computerSelection === "rock" && playerSelection === "paper") {
+                return "Player Wins!";
+            } else if (computerSelection === "paper" && playerSelection === "scissors") {
+                return "Player Wins!";
+            } else if (computerSelection === "scissors" && playerSelection === "rock") {
+                return "Player Wins!";
+            } else {
+                return "Draw";
+            }
+        }
+    
+        const computerSelection = computerPlay();
+        console.log(playRound(playerSelection(), computerSelection));
+
+
+
+
     </script>
 </body>
 
